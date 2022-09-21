@@ -14,6 +14,10 @@ public class DonationService {
         return donationRepository.findAll();     // paginacja?
     }
 
+    public Integer donationSum () {
+        return donationRepository.countDonation();
+    }
+
 
 
 }

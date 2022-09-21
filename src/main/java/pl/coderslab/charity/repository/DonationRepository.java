@@ -7,4 +7,6 @@ import pl.coderslab.charity.model.Donation;
 public interface DonationRepository extends JpaRepository <Donation, Integer>{
 
 
+    Integer countDonation();
+
 }
