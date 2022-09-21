@@ -20,6 +20,7 @@ public class HomeController {
     public String homeAction(Model model){
         List<Institution> list = (List<Institution>) institutionService.getInstitutionsList();
         model.addAttribute("institutions", list);
+
         return "index";
     }
 }
