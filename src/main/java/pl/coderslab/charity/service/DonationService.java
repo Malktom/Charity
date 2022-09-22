@@ -14,11 +14,13 @@ public class DonationService {
         return donationRepository.findAll();     // paginacja?
     }
 
-    public Integer donationSum () {
+    public Integer bagDonationSum () {
 //        return donationRepository.countDonations();
-        return donationRepository.sumDonations();
+        return donationRepository.sumDonationsBags();
     }
-
+    public Integer donationSum() {
+        return donationRepository.donationsSum();
+    }
 
 
 }
