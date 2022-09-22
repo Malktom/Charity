@@ -1,12 +1,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
-<section class="contact-us">
-    <div class="contact-us--image"><img src="<c:url value="resources/images/footer-bg.jpg"/>" alt="Sweaters"/>
-
-    </div>
-
-    <div class="contact-us--text">
+<footer>
+    <div class="contact">
         <h2>Skontaktuj się z nami</h2>
         <h3>Formularz kontaktowy</h3>
         <form class="form--contact">
@@ -18,7 +14,6 @@
             <button class="btn" type="submit">Wyślij</button>
         </form>
     </div>
-
     <div class="bottom-line">
         <span class="bottom-line--copy">Copyright &copy; 2018</span>
         <div class="bottom-line--icons">
@@ -27,4 +22,4 @@
                 src="images/icon-instagram.svg"/></a>
         </div>
     </div>
-</section>>
+</footer>
