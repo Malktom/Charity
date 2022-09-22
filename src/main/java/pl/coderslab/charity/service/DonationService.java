@@ -16,7 +16,7 @@ public class DonationService {
 
     public Integer donationSum () {
 //        return donationRepository.countDonations();
-        return donationRepository.sumQuantityFromDonations();
+        return donationRepository.sumDonations();
     }
 
 

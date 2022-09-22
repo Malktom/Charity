@@ -8,6 +8,7 @@ import pl.coderslab.charity.model.Donation;
 public interface DonationRepository extends JpaRepository <Donation, Integer>{
 
 
-Integer sumQuantityFromDonations();
-
+//Integer sumQuantityFromDonations();
+@Query("SELECT SUM(d.quantity) FROM Donation d")
+Integer sumDonations();
 }
