@@ -70,10 +70,10 @@
     <div class="form--steps-container">
         <div class="form--steps-counter">Krok <span>1</span>/4</div>
 
-<%--        <form action="form-confirmation.html" method="post">--%>
-            <!-- STEP 1: class .active is switching steps -->
+        <%--        <form action="form-confirmation.html" method="post">--%>
+        <!-- STEP 1: class .active is switching steps -->
 
-            <form:form method="post" modelAttribute="donation">
+        <form:form method="post" modelAttribute="donation">
             <div data-step="1" class="active">
                 <h3>Zaznacz co chcesz oddać:</h3>
 
@@ -86,12 +86,11 @@
 
                         <span class="checkbox">
                         <span class="description"
-<%--                        >${category.name}--%>
+                                <%--                        >${category.name}--%>
                         </span>
                         </span>
                     </label>
                 </div>
-
 
 
                 <div class="form-group form-group--buttons">
@@ -122,10 +121,9 @@
                 <h3>Wybierz organizacje, której chcesz pomóc:</h3>
 
                 <form:radiobuttons path="institution"
-                                 items="${institutions}" itemLabel="name"/>
+                                   items="${institutions}" itemLabel="name"/>
 
-<%--     ??????         jak dodac description?   czy trzeba uzyc c:forEach ??   ??????????     --%>
-
+                    <%--     ??????         jak dodac description?   czy trzeba uzyc c:forEach ??   ??????????     --%>
 
 
                 <div class="form-group form-group--buttons">
@@ -142,7 +140,7 @@
                     <div class="form-section--column">
                         <h4>Adres odbioru</h4>
                         <div class="form-group form-group--inline">
-                            <label> Ulica <form:input path="street" type="text" name ="adress"/> </label>
+                            <label> Ulica <form:input path="street" type="text" name="adress"/> </label>
                         </div>
 
                         <div class="form-group form-group--inline">
@@ -155,11 +153,11 @@
                             </label>
                         </div>
 
-<%--                        <div class="form-group form-group--inline">--%>
-<%--                            <label>--%>
-<%--                                Numer telefonu <form:input path="" type="phone" name="phone"/>--%>
-<%--                            </label>--%>
-<%--                        </div>--%>
+                            <%--                        <div class="form-group form-group--inline">--%>
+                            <%--                            <label>--%>
+                            <%--                                Numer telefonu <form:input path="" type="phone" name="phone"/>--%>
+                            <%--                            </label>--%>
+                            <%--                        </div>--%>
                     </div>
 
                     <div class="form-section--column">
@@ -175,7 +173,7 @@
                         <div class="form-group form-group--inline">
                             <label>
                                 Uwagi dla kuriera
-                                <form:textarea path="pickUpComments" name="more_info" rows="5"></form:textarea>
+                                <form:textarea path="pickUpComments" rows="3"></form:textarea>
                             </label>
                         </div>
                     </div>
@@ -237,7 +235,7 @@
                     <button type="submit" class="btn">Potwierdzam</button>
                 </div>
             </div>
-<%--        </form>--%>
+            <%--        </form>--%>
         </form:form>
     </div>
 </section>
