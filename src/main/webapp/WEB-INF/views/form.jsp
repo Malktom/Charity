@@ -236,6 +236,7 @@
                 </div>
             </div>
             <%--        </form>--%>
+            <input type="submit" value="submit">
         </form:form>
     </div>
 </section>
