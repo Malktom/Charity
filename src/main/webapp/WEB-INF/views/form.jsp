@@ -81,14 +81,17 @@
                 <div class="form-group form-group--checkbox">
                     <label>
 
-                        <form:checkboxes path="categories"
-                                         items="${categories}" itemLabel="name"/>
 
-                        <span class="checkbox">
-                        <span class="description"
-                                <%--                        >${category.name}--%>
-                        </span>
-                        </span>
+                        <c:forEach items="${categories}" var="category">
+                            <div class="form-group form-group--checkbox">
+                                <label>
+                                    <form:checkbox path="categories" value="${category}"/>
+                                    <span class="checkbox"></span>
+                                    <span class="description">${category.name}</span>
+                                </label>
+                            </div>
+                        </c:forEach>
+
                     </label>
                 </div>
 
@@ -120,11 +123,20 @@
             <div data-step="3">
                 <h3>Wybierz organizacje, której chcesz pomóc:</h3>
 
-                <form:radiobuttons path="institution"
-                                   items="${institutions}" itemLabel="name"/>
-
-                    <%--     ??????         jak dodac description?   czy trzeba uzyc c:forEach ??   ??????????     --%>
-
+<%--                <form:radiobuttons path="institution"--%>
+<%--                                   items="${institutions}" itemLabel="name"/>--%>
+                <c:forEach items="${institutions}" var="institution">
+                    <div class="form-group form-group--checkbox">
+                        <label>
+                            <input id="${institution.name}" type="radio" value="${institution.id}"  name="institution"/>
+                            <span class="checkbox radio"></span>
+                            <span class="description">
+                    <div class="title">Fundacja ${institution.name}</div>
+                    <div class="subtitle">${institution.description}</div>
+                  </span>
+                        </label>
+                    </div>
+                </c:forEach>
 
                 <div class="form-group form-group--buttons">
                     <button type="button" class="btn prev-step">Wstecz</button>
@@ -153,11 +165,7 @@
                             </label>
                         </div>
 
-                            <%--                        <div class="form-group form-group--inline">--%>
-                            <%--                            <label>--%>
-                            <%--                                Numer telefonu <form:input path="" type="phone" name="phone"/>--%>
-                            <%--                            </label>--%>
-                            <%--                        </div>--%>
+
                     </div>
 
                     <div class="form-section--column">
@@ -195,7 +203,7 @@
                             <li>
                                 <span class="icon icon-bag"></span>
                                 <span class="summary--text"
-                                >4 worki ubrań w dobrym stanie dla dzieci</span
+                                ></span
                                 >
                             </li>
 
@@ -220,7 +228,7 @@
                         </div>
 
                         <div class="form-section--column">
-                            <h4>Termin odbioru:</h4>
+                            <h4>Termin odbioru:</h4>charity-donation
                             <ul>
                                 <li>13/12/2018</li>
                                 <li>15:40</li>
@@ -236,7 +244,7 @@
                 </div>
             </div>
             <%--        </form>--%>
-            <input type="submit" value="submit">
+<%--            <input type="submit" value="submit">--%>
         </form:form>
     </div>
 </section>
