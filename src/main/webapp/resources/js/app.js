@@ -167,6 +167,20 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
   }
+  let category = document.querySelectorAll('input[type="checkbox"]:checked')
+  let institution = document.querySelectorAll('input[type="radio"]:checked')
+
+
+  let quantity = document.getElementById('quantity').value;
+  let street = document.getElementById('street').value;
+  let city = document.getElementById('city').value;
+  let zipCode = document.getElementById('zipCode').value;
+  let pickUpDate = document.getElementById('pickUpDate').value;
+  let pickUpTime = document.getElementById('pickUpTime').value;
+  let pickUpComment = document.getElementById('pickUpComment').value;
+
+
+
   const form = document.querySelector(".form--steps");
   if (form !== null) {
     new FormSteps(form);
