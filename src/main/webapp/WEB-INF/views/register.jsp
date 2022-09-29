@@ -20,7 +20,7 @@
 </header>
 <section class="login-page">
     <h2>Załóż konto</h2>
-    <form>
+    <form:form method="post" modelAttribute="user">
         <div class="form-group">
             <input type="email" name="email" placeholder="Email" />
         </div>
@@ -35,7 +35,7 @@
             <a href="login.html" class="btn btn--without-border">Zaloguj się</a>
             <button class="btn" type="submit">Załóż konto</button>
         </div>
-    </form>
+    </form:form>
 </section>
 <jsp:include page="footer.jsp"/>
 <script src="<c:url value="/resources/js/app.js"/>"></script>
