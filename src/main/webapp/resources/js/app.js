@@ -164,7 +164,7 @@ document.addEventListener("DOMContentLoaded", function() {
       this.$step.parentElement.hidden = this.currentStep >= 5;
 
       // TODO: get data from inputs and show them in summary
-      let category = document.querySelectorAll('input[type="checkbox"]:checked');
+      // let category = document.querySelectorAll('input[type="checkbox"]:checked');
       // let institution = document.querySelectorAll('input[type="radio"]:checked')
 
 
@@ -175,7 +175,12 @@ document.addEventListener("DOMContentLoaded", function() {
         }
       });
       console.log(institution)
-
+      let category = [];
+      document.querySelectorAll("input[type=checkbox]").forEach(el => {
+        if (el.checked === true) {
+          category.push(el.parentElement.querySelector(".description").innerHTML);
+        }
+      })
 
       let quantity = document.getElementById('quantity').value;
       let street = document.getElementById('street').value;
@@ -186,7 +191,7 @@ document.addEventListener("DOMContentLoaded", function() {
       let pickUpComment = document.getElementById('pickUpComments').value;
 
       document.getElementById('institution').innerHTML = `Dla fundacji "${institution}"`
-      document.getElementById('bags').innerHTML = `${quantity} worków`
+      document.getElementById('bags').innerHTML = `${quantity} worków z kategorii ${category}`
       document.getElementById('deliverStreet').innerHTML = ` ${street}`
       document.getElementById('deliverCity').innerHTML = ` ${city}`
       document.getElementById('deliveryZipCode').innerHTML = ` ${zipCode}`
