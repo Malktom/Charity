@@ -208,7 +208,7 @@
                         <ul>
                             <li>
                                 <span class="icon icon-bag"></span>
-                                <span class="summary--text"
+                                <span class="summary--text" id="bags"
                                 ></span
                                 >
                             </li>
@@ -223,20 +223,20 @@
                     <div class="form-section form-section--columns">
                         <div class="form-section--column">
                             <h4>Adres odbioru:</h4>
-                            <ul>
-                                <li>Prosta 51</li>
-                                <li>Warszawa</li>
-                                <li>99-098</li>
-                                <li>123 456 789</li>
+                            <ul>ulica:
+                                <li id="deliverStreet"></li>miasto:
+                                <li id="deliverCity"></li>kod:
+                                <li id="deliveryZipCode"></li>
+
                             </ul>
                         </div>
 
                         <div class="form-section--column">
-                            <h4>Termin odbioru:</h4>charity-donation
-                            <ul>
-                                <li>13/12/2018</li>
-                                <li>15:40</li>
-                                <li>Brak uwag</li>
+                            <h4>Termin odbioru:</h4>
+                            <ul>data odbioru:
+                                <li id="deliveryPickUpDate"></li>godzina odbioru:
+                                <li id ="deliveryPickUpTime"></li>uwagi dla kuriera:
+                                <li id="deliveryPickUpComment"></li>
                             </ul>
                         </div>
                     </div>

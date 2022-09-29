@@ -177,8 +177,6 @@ document.addEventListener("DOMContentLoaded", function() {
       console.log(institution)
 
 
-
-
       let quantity = document.getElementById('quantity').value;
       let street = document.getElementById('street').value;
       let city = document.getElementById('city').value;
@@ -188,9 +186,13 @@ document.addEventListener("DOMContentLoaded", function() {
       let pickUpComment = document.getElementById('pickUpComments').value;
 
       document.getElementById('institution').innerHTML = `Dla fundacji "${institution}"`
-      // document.getElementById("institutionInput").innerText = "Dla fundacji : " + document.querySelector("input[name=institution]:checked").dataset.institutionName;
-
-
+      document.getElementById('bags').innerHTML = `${quantity} worków`
+      document.getElementById('deliverStreet').innerHTML = ` ${street}`
+      document.getElementById('deliverCity').innerHTML = ` ${city}`
+      document.getElementById('deliveryZipCode').innerHTML = ` ${zipCode}`
+      document.getElementById('deliveryPickUpDate').innerHTML = `${pickUpDate}`
+      document.getElementById('deliveryPickUpTime').innerHTML = `${pickUpTime}`
+      document.getElementById('deliveryPickUpComment').innerHTML = ` ${pickUpComment}`
     }
 
   }
