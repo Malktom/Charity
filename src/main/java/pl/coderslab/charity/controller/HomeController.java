@@ -29,4 +29,10 @@ public class HomeController {
         model.addAttribute("donations", donationSum);
         return "index";
     }
+
+    @RequestMapping("/register")
+    public String register() {
+
+        return "register";
+    }
 }
