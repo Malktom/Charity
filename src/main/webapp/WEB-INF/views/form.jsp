@@ -85,7 +85,8 @@
                         <c:forEach items="${categories}" var="category">
                             <div class="form-group form-group--checkbox">
                                 <label>
-                                    <form:checkbox path="categories" value="${category}"/>
+                                    <input id="${category.name}" type="checkbox" value="${category.id}" name="categories"/>
+<%--                                    <form:checkbox path="categories" value="${category}" ssClass="checkbox"/>--%>
                                     <span class="checkbox"></span>
                                     <span class="description">${category.name}</span>
                                 </label>
@@ -125,15 +126,20 @@
 
 <%--                <form:radiobuttons path="institution"--%>
 <%--                                   items="${institutions}" itemLabel="name"/>--%>
-                <c:forEach items="${institutions}" var="institution">
+                <c:forEach var="institutions" items="${institutions}">
                     <div class="form-group form-group--checkbox">
                         <label>
-                            <input id="${institution.name}" type="radio" value="${institution.id}"  name="institution"/>
+
+                            <input type="radio" id="institutionCheck" name="institution" value="${institutions.id}" data-institutionName="${institutions.name}"/>
                             <span class="checkbox radio"></span>
                             <span class="description">
-                    <div class="title">Fundacja ${institution.name}</div>
-                    <div class="subtitle">${institution.description}</div>
-                  </span>
+                                                  <div class="title">${institutions.name}</div>
+                                                  <div class="subtitle">
+                                                          ${institutions.description}
+                                                  </div>
+                                                </span>
+
+
                         </label>
                     </div>
                 </c:forEach>
@@ -209,9 +215,7 @@
 
                             <li>
                                 <span class="icon icon-hand"></span>
-                                <span class="summary--text"
-                                >Dla fundacji "Mam marzenie" w Warszawie</span
-                                >
+                                <span class="summary--text" id="institution"></span>
                             </li>
                         </ul>
                     </div>
