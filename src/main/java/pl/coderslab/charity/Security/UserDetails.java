@@ -3,6 +3,7 @@ package pl.coderslab.charity.Security;
 import lombok.AllArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import pl.coderslab.charity.model.Role;
 import pl.coderslab.charity.model.User;
 
 import java.util.Collection;
@@ -17,7 +18,7 @@ public class UserDetails implements org.springframework.security.core.userdetail
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return user.getRoles()
                 .stream()
-                .map(SimpleGrantedAuthority::new)
+                .map((Role role) -> new SimpleGrantedAuthority(role.getName()))
                 .collect(Collectors.toSet());
     }
 
