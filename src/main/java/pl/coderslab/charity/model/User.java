@@ -6,6 +6,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -21,9 +22,10 @@ public class User {
     private String email;
     private String password;
 //    @ElementCollection
-//    @ManyToMany(fetch = FetchType.EAGER)
-    @Transient
-    private Set<String> roles = Set.of("USER");
+    @ManyToMany(fetch = FetchType.EAGER)
+    private Set<Role> roles;
+//    @Transient
+//    private Set<String> roles = Set.of("USER");
 
 //    public User(String email, String password) {
 //        this.email = email;
