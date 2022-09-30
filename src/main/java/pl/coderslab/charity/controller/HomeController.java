@@ -58,5 +58,30 @@ public class HomeController {
         return "index";
     }
 
+    @GetMapping("/info")
+    public String info(Model model) {
+        List<Institution> list = (List<Institution>) institutionService.getInstitutionsList();
+        model.addAttribute("institutions", list);
+        Integer bagDonationSum = donationService.bagDonationSum();
+        model.addAttribute("bagDonationSum", bagDonationSum);
+        Integer donationSum = donationService.donationSum();
+        model.addAttribute("donations", donationSum);
+        return "info";
+    }
+    @GetMapping("/institutions")
+    public String institutions(Model model) {
+        List<Institution> list = (List<Institution>) institutionService.getInstitutionsList();
+        model.addAttribute("institutions", list);
+        return "institutions";
+    }
+        @GetMapping("/about")
+        public String about() {
+            return "about";
+        }
 
-}
+    @GetMapping("/contact")
+    public String contact() {
+        return "contact";
+    }
+
+    }
