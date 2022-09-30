@@ -3,10 +3,13 @@ package pl.coderslab.charity.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import pl.coderslab.charity.model.Institution;
+import pl.coderslab.charity.model.User;
 import pl.coderslab.charity.service.DonationService;
 import pl.coderslab.charity.service.InstitutionService;
+import pl.coderslab.charity.service.UserService;
 
 import java.util.List;
 
@@ -18,6 +21,8 @@ public class HomeController {
     private InstitutionService institutionService;
     @Autowired
     private DonationService donationService;
+    @Autowired
+    private UserService userService;
 
     @RequestMapping("/")
     public String homeAction(Model model){
@@ -29,4 +34,20 @@ public class HomeController {
         model.addAttribute("donations", donationSum);
         return "index";
     }
+
+    @RequestMapping("/register")
+    public String register(Model model) {
+        model.addAttribute("user", new User());
+        return "register";
+    }
+
+    @PostMapping("/register")
+    public String register(User user) {
+        userService.save(user);
+        return "index";
+    }
+
+
+
+
 }
